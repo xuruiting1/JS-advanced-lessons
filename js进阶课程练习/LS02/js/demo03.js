@@ -21,7 +21,7 @@
 }());
 
 //注意：是值赋值还是引用赋值取决于变量的类型，而不取决于变量分配在堆区还是栈区
-var obj_c = {x1:2,y1:3};//obj_c.x1在堆区还是栈区
+var obj_c = {x1:2,y1:3};//obj_c.x1在堆区还是栈区（在堆区）
 var obj_d = {x2:2,y2:3};
 
 console.log(obj_c.x1 === obj_d.x2);//true
