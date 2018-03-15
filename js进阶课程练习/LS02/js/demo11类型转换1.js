@@ -1,3 +1,5 @@
+//类型转换方法
+
 //其他类型转换为Boolean类型中
 //undefined    false
 //null   false
