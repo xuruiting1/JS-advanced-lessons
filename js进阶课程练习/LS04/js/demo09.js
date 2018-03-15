@@ -1,44 +1,55 @@
-/**
- * Created by qile on 2017/8/14.
- */
-
-//对象类型 简述
-var obj = {x:1,y:2};//obj的原型是Object.prototype,并且obj继承的属性和方法都源于这个原型
-console.log(obj.__proto__ === Object.prototype);
-console.log(Object.prototype);
-
-var arr = [1,2,3,4,5];//arr的原型是Array.prototype,并且arr继承的属性和方法都源于这个原型
-console.log(arr.__proto__ === Array.prototype);
-console.log(Array.prototype);
-console.log(arr.__proto__.__proto__ === Object.prototype);
-
-function foo() { //foo的原型是Function.prototype,并且foo继承的属性和方法都源于这个原型
-    console.log("foo function!");
-};
-console.log(foo.__proto__ === Function.prototype);
-console.log(foo.__proto__.__proto__ === Object.prototype);
-
-console.log(obj instanceof Object);
-console.log(arr instanceof Object);
-console.log(foo instanceof Object);
-console.log(foo === window.foo);
-
-//所有对象都有属性，如何查看对象的属性，ES5中查看属性相关的几种方法
-for(var k in obj){//只能遍历整个原型链上可遍历的属性
-    console.log(k,obj[k]);
+// 利用switch的穿透性:求某月某日是一年中的第几天?
+//2018年3月15
+var year = 2018,
+    month = 3,
+    date = 15,
+    sum = 0;
+switch(month-1){
+    case 11:
+        sum += 30;
+    case 10:
+        sum += 31;
+    case 9:
+        sum += 30;
+    case 8:
+        sum += 31;
+    case 7:
+        sum += 31;
+    case 6:
+        sum += 30;
+    case 5:
+        sum += 31;
+    case 4:
+        sum += 30;
+    case 3:
+        sum += 31;
+    case 2:
+        sum += year%4==0&&year%100!=0||year%400==0?29:28;
+    case 1:
+        sum += 31;
+    default:
+        sum += date;
 }
-
-console.log(Object.keys(obj));
-
-console.log("x" in obj);//能够检查整个原型连上的属性，包括不可遍历的属性
+console.log(sum);
+// 74
 
 
-//注意：以下实例只做了解，具体内容在对象属性特性章节和函数对象章节详细介绍
-//函数也是对象，也不例外，函数也有若干属性 查看foo函数都有哪些属性
-for(var k in foo){
-    console.log(k,foo[k]);//没有自身属性，所以没有输出
+// 穿透性例子2
+
+var i = 1;//i=2、3、4
+switch(i){
+    case 1:
+        console.log("case 1");
+    case 2:
+        console.log("case 2");
+        break;
+    case 3:
+        console.log("case 3");
+    //break;
+    case 4:
+        console.log("case 4");
+    default:
+        console.log("default");
 }
-console.log("call" in foo);//true
-console.log("apply" in foo);//true
-console.log("arguments" in foo);//true
-
+ //输出 case 1
+ //     case 2

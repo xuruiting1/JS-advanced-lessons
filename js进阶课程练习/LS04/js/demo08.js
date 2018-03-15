@@ -1,24 +1,46 @@
-/**
- * Created by qile on 2017/8/14.
- */
+//case后面可以是表达式
 
-//Bool类型的值只有两个 true、false
-
-//Undefined 的几种情况
-var a;
-console.log(a);//undefined
-
-function foo(x,y) {
-    console.log(x,y);//1 undefined
+//是三等的比较
+//new Boolean(true)===返回false，直接到default
+var i = 65;
+switch(new Boolean(true)){ //思考若是改为 switch(new Boolean(true)){ 会怎样
+    case i>=60:
+        console.log('及格');
+        break;
+    case i<60:
+        console.log('不及格');
+        break;
+    default:
+        console.log('default');
 }
-foo(1);
+// default
 
-function fee() {
-    //没有返回值的情况
+var i = 65;
+switch(new Boolean(true)){ 
+    case (new Boolean(i>=60))://new Boolean(true)===new Boolean(true)
+    							// 无论两等还是三等都是不一样的，因为是引用
+        console.log('及格');
+        break;
+    case (new Boolean(i<60)):
+        console.log('不及格');
+        break;
+    default:
+        console.log('default');
 }
-var feeReturnValue = fee();
-console.log(feeReturnValue);//undefined
+// default
 
-
-//null 需要注意的一点
-console.log(typeof null);//object
+var j = new Number(23);
+switch (j){
+    case 23:
+        console.log("case_111");
+        break;
+    case "23":
+        console.log("case_222");
+        break;
+    case new Number(23):
+        console.log("case_333");
+        break;
+    default:
+        console.log("case_default");
+}
+// case_default
