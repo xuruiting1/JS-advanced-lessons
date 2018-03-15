@@ -1,13 +1,13 @@
-//练习1
+//练习1 
 var n1=12345.6789;
 console.log(n1.toFixed(2));
 console.log(n1.toPrecision(2));
 console.log(n1.toString());
 console.log(n1.toExponential(2));
-// 2 12345.68
-// 3 1.2e+4
-// 4 12345.6789
-// 5 1.23e+4
+// 输出2 12345.68
+// 输出3 1.2e+4
+// 输出4 12345.6789
+// 输出5 1.23e+4
 
 
 //练习2

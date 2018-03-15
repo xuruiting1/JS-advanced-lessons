@@ -15,7 +15,7 @@ console.log("A".localeCompare("A")); // 0
 console.log("A".localeCompare("B"));// -1
 
 
-//substr 与 substring的区别
+//注意substr 与 substring的区别
 
 
 var str13 = "abcdefghijklmn";
@@ -30,8 +30,13 @@ console.log(str13,str15);//abcdefghijklmn cde
 
 //字符串变换
 
-var str16 = "aaa".concat("bbb");//返回字符串
-var str17 = "    abc def     \r\n  ".trim();//返回已移除前导空格、尾随空格和行终止符的原始字符串
-var str18 = "abcDEF".toLowerCase();
-var str19 = "abcDEF".toUpperCase();
+var str4 = "aaa".concat("bbb");//返回字符串
+var str5 = "    abc def     \r\n  ".trim();//返回已移除前导空格、尾随空格和行终止符的原始字符串
+var str6 = "abcDEF".toLowerCase();
+var str7 = "abcDEF".toUpperCase();
+//结果为：
 
+//aaabbb
+//abc def
+//abcdef
+//ABCDEF
