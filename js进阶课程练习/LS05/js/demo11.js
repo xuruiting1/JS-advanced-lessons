@@ -1,41 +1,21 @@
-/**
- * Created by qile on 2017/8/14.
- */
-//Part 1
-console.log(Boolean(undefined));
-console.log(Boolean(null));
-console.log(Boolean(0));
-console.log(Boolean(NaN));
-console.log(Boolean(1));
-console.log(Boolean(""));
-console.log(Boolean("abc"));
-console.log(Boolean({}));
-
-if(new Boolean(false)){
-    console.log("执行");
+//注意=与==（表达式要发反写，有什么好处）
+var a = 34;
+if(a = 45){
+    console.log("是否会输出？");
 }
+//是否会输出？
+undefined
+var b = 34;
+if(45 == b){//为什么要这样写，有什么好处
+    console.log("是否会输出？");
+}
+//不输出
+var a=34;
+if(45=a)
+{
+	console.log("hi");
+}
+//会报错
 
-//Part 2
-console.log(Number(undefined));
-console.log(Number(null));
-console.log(Number(true));
-console.log(Number(false));
-console.log(Number(""));
-console.log(Number("abc"));
-console.log(Number("123.345xx"));//
-console.log(Number("32343,345xx"));
-console.log(Number({x:1,y:2}));
 
-console.log(parseFloat("123.345xx"));
-console.log(parseFloat("32343,345xx"));
-console.log(parseInt("123.345xx"));
-console.log(parseInt("32343,345xx"));
-
-//Part 3
-console.log(String(undefined));
-console.log(String(null));
-console.log(String(true));
-console.log(String(false));
-console.log(String(0));
-console.log(String(234));
-console.log(String({x:1,y:2}));
+//思考+=和/=的区别，隐式转换都换成什么

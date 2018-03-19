@@ -1,49 +1,45 @@
-/**
- * Created by qile on 2017/8/14.
- */
-// Part11111111 隐式类型转换
-//比较运算符 与 隐式类型转换
-var a = 3;
-var b = 4;
-console.log(typeof (a>b),a>b);
-console.log(typeof (a==b),a==b);
-console.log(typeof (a<b),a<b);
+//算数运算符与类型转换
+"1"+"2"; //"12"
+"1"+2; //"12"
+1+{}; //"1[object Object]"
+true+true; //2 
+"5"-2; //3
 
-//算数运算符 与 隐式类型转换 + -
-var c = "img" + 3 +".jpg";
-var d = "23" - 5;
-console.log(c,d);
+//
+var x = "1";
+console.log(++x); //2 注意++和--的隐式类型转换
+var x = "1";
+console.log(x+1);//11
 
-//逻辑运算符 与 隐式类型转换 + -
-var e = !23;
-var f = !!34;//!!""   !!0   !!"abc"  !!undefined  !!null
-var g = !!{};
-console.log(e,f,g);
-
-// 流程语句 与 隐式类型转换
-var h = {x:1};
-//var h = "";
-if(h){
-    console.log("h:",h);
-}
+//回顾++i 与 i++
+var i=1;
+var y = ++i + ++i + ++i;
+console.log(y);
+//9
 
 
-// Part2222222 显式类型转换
-Boolean();
-Number();
-String();
-Object();
+//思考+=和/=的区别，隐式转换都换成什么???
+//+=换成字符串  /=换成数字
 
-123.456.toFixed(1);
-toString();
-toFixed();
-toPrecision();
-toExponential();
+var x="1";
+x+=1;
+console.log(x);
+//11
+x/=2;
+console.log(x);
+//5.5
 
-parseInt();
-parseFloat();
 
-toString();
-valueOf();
+
+
+// == 与 ==
+
+// == 
+// （如果类型不同，先转换再比较，注：引用类型到基本类型的转换方向）
+// === （若类型不同则false，若类型相同则判断同 ==）
+
+{}==={}  是false,因为是引用
+
+
 
 
