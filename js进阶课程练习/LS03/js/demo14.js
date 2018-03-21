@@ -1,4 +1,8 @@
-
+//字符串比较
+console.log("A" > "a");
+console.log("B".localeCompare("A")); //考虑本地化的字符排序，返回0或非0
+console.log("A".localeCompare("A")); //考虑本地化的字符排序，返回0或非0
+console.log("A".localeCompare("B"));
 // 字符串常用方法
 
 var str1="abcdef".slice(2);
@@ -40,3 +44,29 @@ var str7 = "abcDEF".toUpperCase();
 //abc def
 //abcdef
 //ABCDEF
+
+
+var str2 = "abcdef".slice(2);
+var str3 = "abcdef".slice(2,5);
+var str4 = "abcdef".slice(-2);
+var str5 = "abcdef".slice(2,-2);
+
+var arr6 = "abcdef".split("c");//返回数组
+var arr7 = "abcdef".split("c",1);
+var arr8 = "abcdef".split("c",2);
+
+var str9 = "abcdef".charAt(2);
+var str10 = "abcdef".charCodeAt(3);
+var str11 = "abcdefabcdef".indexOf("d",1);
+var str12 = "abcdefabcdef".indexOf("d",4);
+console.log(str2);//cdef 从第二个开始
+console.log(str3);//cde  2-5但是不包括5
+console.log(str4);//ef  倒数
+console.log(str5);//cd
+console.log(str6);//["ab", "def"]
+console.log(str7);//["ab", "def"]
+console.log(str8);//["ab", "def"]
+console.log(str9);//c
+console.log(str10);//100
+console.log(str11);//3 第一个d
+console.log(str12);//9
