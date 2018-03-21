@@ -5,8 +5,8 @@
 var a = 123;
 var b = new Number(a);
 
-console.log(a == b);
-console.log(a === b);//true or false 为什么
+console.log(a == b);//true
+console.log(a === b);//false 为什么
 
 //临时包装对象
 var str = "abcde";
