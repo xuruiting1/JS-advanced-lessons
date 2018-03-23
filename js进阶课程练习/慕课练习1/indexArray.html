@@ -1,0 +1,74 @@
+
+<!-- 请在index.html文件中，编写arraysSimilar函数，实现判断传入的两个数组是否相似。具体需求：
+
+1. 数组中的成员类型相同，顺序可以不同。例如[1, true] 与 [false, 2]是相似的。
+
+2. 数组的长度一致。
+
+3. 类型的判断范围，需要区分:String, Boolean, Number, undefined, null, 函数，日期, window.
+
+当以上全部满足，则返回"判定结果:通过"，否则返回"判定结果:不通过"。 -->
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <!-- <meta http-equiv="Content-Type" content="text/html; charset=gb18030"> -->
+    <title>Untitled Document</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script type="text/javascript">   
+        /*
+         * param1 Array 
+         * param2 Array
+         * return true or false
+         */
+        function arraysSimilar(arr1, arr2){
+        	var arrType1=[];
+            var arrType2=[];
+        	if(!(arr1 instanceof Array)||!(arr2 instanceof Array))
+        	{
+        		return false;
+        	}
+        	if(arr1.length!=arr2.length)
+        	{
+        		return false;
+        	}
+        	// for( var i=0; i<arr1.length; i++){
+         //        arrType1.push(Object.prototype.toString.call(arr1[i]));//x.call(y)即用x对象代替y对象
+         //        arrType2.push(Object.prototype.toString.call(arr2[i]));
+         //    }
+         //    if(arrType1.sort().toString()== arrType2.sort().toString()){//sort方法:如果调用该方法时没有使用参数，将按字母顺序对数组中的元素进行排序，说得更精确点，是按照字符编码的顺序进行排序。
+         //        return "通过";
+         //    }
+         //    else
+         //    {
+         //        return "不通过";
+         //    }
+         	var arr3=arr1.sort();
+         	var arr4=arr2.sort();
+         	for(var i=0;i<arr1.length;i++)
+         	{
+         		if(arr3[i]==arr4[i])
+         		{
+         			i++;
+         		}
+         		else
+         		{
+         			return "不通过";
+         		}
+         	}
+         	if(i==arr1.length)
+         	{
+         		return "通过";
+         	}
+        
+        		
+        	
+
+        }
+        	
+    </script>
+    <script src="testData.js"></script>
+</body>
+</html>
