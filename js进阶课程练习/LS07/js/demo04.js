@@ -1,38 +1,37 @@
-/**
- * Created by qile on 2017/8/14.
- */
-(function () { //立即执行表达式开始
-//基本（原始）数据类型与引用（对象）类型的区别1 判等不同
-var a1 = 100;
-var b1 = 100;
-console.log(a1 == b1);
-console.log(a1 === b1);
+//值传递
+var a = 1;
+function foo(x) {
+    console.log("a:",a," x:",x);//1   
+    x = 2;//step 2222
+    console.log("a:",a," x:",x);//1   1step 3333
+}
 
-//
-var a2 = new Number(200);
-var b2 = new Number(200);
-console.log(a2 == b2);
-console.log(a2 === b2);
+console.log("a:",a);//1 2 
+foo(a);// step 1111
+console.log("a:",a); // step 4444  a仍为1
 
-//
-var a3 = new Number(200);
-var b3 = a3;
-console.log(a3 == b3);
-console.log(a3 === b3);
 
-b3 = new Number(200);
-console.log(a3 === b3);
-/*
-//思考
-var a4 = new Number(200);
-var b4 = 200;
-console.log(a4 == b4);//思考：是b4转换了，还是a4转换了
-console.log(a4 === b4);
 
-//思考
-var a5 = {x:1,y:2};
-var b5 = {x:1,y:2};
-console.log(a5 === b5);
-console.log(a5.x === a5.x);//对象属性如果是基本类型内存分配在哪，比较时是值比较还是引用比较
-*/
-}());//立即执行表达式结束
+//引用传递
+var obj = {x:1};
+function fee(o){
+    console.log("obj.x :",obj.x," o.x :",o.x);
+    o.x = 3;// step 2222
+    console.log("obj.x :",obj.x," o.x :",o.x);// step 3333
+}
+
+console.log("obj.x :",obj.x);
+fee(obj);// step 1111
+console.log("obj.x :",obj.x);//step 4444  obj.x被改写为3
+
+//打开index.html 学习chrome的Sources调试
+document.onclick = function () {//测试Event Listener Breakpoints
+    alert("click");
+    //var body =  document.getElementsByName("body");
+};
+
+//打开index.html 学习chrome的Sources调试，还可以关注到每一个变量变化的过程
+//跳转到下一行
+//跳过函数体，不看细节
+//一步一步执行
+//跳出函数
