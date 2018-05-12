@@ -25,3 +25,15 @@ str.replace(reg1,'xx');
 
 var reg2=new RegExp(/fat/,'gi');
 str.replace(reg2,'xx');
+
+// 一、g全局、i大小写、m换行 修饰符的作用
+// 二、正则对象的两种基本使用方式 1.字符串.字符串方法（正则对象） 2.正则对象.正则方法（字符串）
+var regExp = /ab/i;
+//match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。
+
+//该方法类似 indexOf() 和 lastIndexOf()，但是它返回指定的值，而不是字符串的位置。
+var matchResult = "xxAbcaaBbxyz".match(regExp);
+console.log(matchResult);
+//["Ab", index: 2, input: "xxAbcaaBbxyz"]
+
+
