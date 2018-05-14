@@ -9,8 +9,20 @@
 
 //转义字符：\t 、\v、\n、\r、\0、\f、\cX
 
+
 //与\相关的预定义特殊字符：\d、\D、\w、\W、\s、\S、\b 、\B（注意大小写的含义）
-b代表边界，大小写是相反的
+
+//b代表边界，大小写是相反的
+
+console.log(/oo/.test("moon"));
+console.log(/oo\b/.test("moon"));
+console.log(/oon\b/.test("moon"));
+console.log(/\boo/.test("moon"));
+
+console.log("moon".search(/oo/));//1
+console.log("moon".search(/oo\b/));//-1
+console.log("moon".search(/oon\b/));//1
+console.log("moon".search(/\boo\b/));//-1
 
 'a2d5'.replace(/\d/gi,'x');
 //axdx
@@ -35,9 +47,14 @@ b代表边界，大小写是相反的
 //正则表达式特殊字符 二 （边界相关）
 
 //边界字符 ^ $ \b \B （注意^代表的意义与在[ ]中代表的意义不同）
-^以谁作为开始
-$以谁 作为结尾
-\b 以谁作为一个边
+
+
+
+// ^以谁作为开始
+// $以谁 作为结尾
+// \b 以谁作为一个边
+
+
 
 不要弄混^
 console.log(/oo/.test("moon"));
@@ -70,6 +87,7 @@ console.log(str);
 
 //* 出现0次或多次（任意次）
 console.log("AaBbAb_AaaBbbAba".replace(/Aa*/g,0));
+//0Bb0b_0Bbb0ba
 
 //{n} 出现n次
 console.log("AaBbAb_AaaBbbAba".replace(/Aa{1}/g,0));
