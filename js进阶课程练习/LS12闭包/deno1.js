@@ -1,3 +1,17 @@
+function f1(){
+	var x = 1;
+	function f2(){
+		return x++;
+	}
+	return f2();
+}
+var f3 = f1();
+//观察f1中的x变量
+console.log(f3);//输出？
+console.log(f3);//输出？
+
+
+
 //闭包实现的效果
 function f1()
 {
