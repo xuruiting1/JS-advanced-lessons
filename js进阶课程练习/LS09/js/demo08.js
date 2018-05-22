@@ -33,6 +33,17 @@ console.log(obj1,obj2);
  //{x: 23} {x: 23}
 //{x: 25} {x: 25}
 
+
+foo();//f_2
+function foo(){
+    console.log("f_1");
+}
+function foo(){
+    console.log("f_2");
+}
+
+//f_2
+
 console.log(foo);
 var foo=function()
 {
@@ -69,3 +80,4 @@ AA = function AA(){
     console.log("AA_2");
 };
 AA();
+

@@ -42,3 +42,19 @@ var f2 = function () {
 };
 f2();
 console.log(y);//若函数内有var此行报错，若函数内没有var则此行输出全局变量y值
+
+
+if(true){
+    (function () { //IIFE start
+        var z = 23;
+    }());           //IIFE end
+}
+console.log(z);
+//VM39:6 Uncaught ReferenceError: z is not defined
+//报错
+
+//ES5中无块作用域
+if(true){
+    var z = 23;//其实是全局变量
+}
+console.log(z);//正常输出
