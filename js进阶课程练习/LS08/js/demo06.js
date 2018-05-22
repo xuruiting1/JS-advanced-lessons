@@ -10,6 +10,9 @@ var foo = function (a,b){
 };
 foo(1,2,3,4);
 
+//[1, 2, 3, 4, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+
+
 
 //函数对象属性之length 形参个数
 function checkVarCount(a, b) {
@@ -19,7 +22,7 @@ function checkVarCount(a, b) {
         alert("Successfully call the function");
     }
 
-}
+},
 checkVarCount(1, 2);
 //Successfully call the function
 checkVarCount(1);
