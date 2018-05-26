@@ -1,3 +1,5 @@
+
+
 var obj = {};
 obj.x = 2;//直接添加属性
 console.log(obj.x);//通过.访问属性
